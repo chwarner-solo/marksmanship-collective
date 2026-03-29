@@ -1,0 +1,329 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ─────────────────────────────────────────── */
+:root {
+    --bg:          #0c0c0b;
+    --bg-section:  #111110;
+    --surface:     #1a1a18;
+    --border:      #2a2a28;
+    --text:        #e8e6e1;
+    --text-muted:  #7a7870;
+    --accent:      #b8935a;
+    --accent-dim:  #7a5f38;
+    --white:       #f5f3ef;
+
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'DM Sans', sans-serif;
+
+    --max-width: 860px;
+    --section-pad: 6rem 2rem;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ────────────────────────────────────────── */
+h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    color: var(--white);
+}
+
+h1 { font-size: clamp(2.4rem, 6vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+h3 { font-size: 1.3rem; font-weight: 400; }
+
+p {
+    color: var(--text);
+    max-width: 62ch;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--white);
+}
+
+/* ── Layout ────────────────────────────────────────────── */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: var(--section-pad);
+    border-bottom: 1px solid var(--border);
+}
+
+section:nth-child(even) {
+    background-color: var(--bg-section);
+}
+
+/* ── Header ────────────────────────────────────────────── */
+header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.05em;
+    max-width: none;
+}
+
+/* ── Hero ──────────────────────────────────────────────── */
+#hero {
+    padding: 8rem 2rem 6rem;
+    background-color: var(--bg);
+}
+
+#hero .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#hero h2 {
+    font-size: clamp(2.2rem, 5vw, 3.6rem);
+    font-weight: 300;
+    color: var(--white);
+    max-width: 18ch;
+}
+
+#hero p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+}
+
+/* ── CTA Button ────────────────────────────────────────── */
+.cta {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+    align-self: flex-start;
+}
+
+.cta:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+/* ── What Is ───────────────────────────────────────────── */
+#what-is .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#what-is h2 {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+#what-is p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: var(--text);
+}
+
+/* ── Disciplines ───────────────────────────────────────── */
+#disciplines .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+#disciplines > .container > h2 {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.discipline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1px;
+    background-color: var(--border);
+    border: 1px solid var(--border);
+}
+
+article {
+    background-color: var(--bg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+article:hover {
+    background-color: var(--surface);
+}
+
+article h3 {
+    color: var(--white);
+}
+
+article p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+}
+
+/* ── About ─────────────────────────────────────────────── */
+#about .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#about h2 {
+    color: var(--accent);
+    font-size: 0.8rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.85;
+}
+
+/* ── Interest / Contact ────────────────────────────────── */
+#interest {
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+#interest .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+#interest h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+#interest p {
+    color: var(--text-muted);
+    text-align: center;
+}
+
+#interest .cta {
+    font-size: 0.9rem;
+    padding: 1rem 2.5rem;
+}
+
+/* ── Footer ────────────────────────────────────────────── */
+footer {
+    padding: 2rem;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin: 0 auto;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 600px) {
+    :root {
+        --section-pad: 4rem 1.5rem;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #hero {
+        padding: 5rem 1.5rem 4rem;
+    }
+
+    #interest {
+        padding: 5rem 1.5rem;
+    }
+}
+
+/* ── Fade In Animation ─────────────────────────────────── */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header, #hero, section {
+    animation: fadeUp 0.6s ease both;
+}
+
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.15s; }
+section:nth-child(4) { animation-delay: 0.2s; }
+section:nth-child(5) { animation-delay: 0.25s; }

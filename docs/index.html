@@ -6,6 +6,15 @@
     <meta name="description" content="Marksmanship Collective — Pistol competition for those who believe marksmanship is a discipline worth pursuing seriously. Triad, North Carolina.">    <title>Marksmanship Collective</title>
     <link rel="stylesheet" href="assets/styles/style.css">
     <link rel="canonical" href="https://marksmanship-collective.com/">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9KPN8E3Y8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-L9KPN8E3Y8');
+    </script>
 </head>
 <body>
 
@@ -66,10 +75,31 @@
     <section id="interest">
         <div class="container">
             <h2>Count Me In</h2>
-            <p>Interested in joining or learning more? Reach out directly.</p>
-            <a href="mailto:info@marksmanship-collective.com" class="cta">info@marksmanship-collective.com</a>        </div>
-    </section>
+            <p>Interested in joining or learning more? Drop us a note — we'll get back to you.</p>
 
+            <form class="contact-form" action="https://formspree.io/f/mzdkrqpe" method="POST">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_subject" value="New message — Marksmanship Collective">
+
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message / Interest</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell us what you're looking for — membership, match schedules, training questions…" required></textarea>
+                </div>
+
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </div>
+    </section>
 </main>
 
 <footer>
